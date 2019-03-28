@@ -6,13 +6,15 @@
 Welcome to Grizzly-Docs's documentation!
 ========================================
 
+Welcome to the Grizzly Robotics programming documentation. This website contains tutorials and resources for our beginner programmers. 
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
 
 
-Indices and tables
+Getting Starting
 ==================
 
 * :ref:`genindex`
