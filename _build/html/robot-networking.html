@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Robot Networking &mdash; Grizzly-Docs 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Grizzly-Docs’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Grizzly-Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Robot Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-we-use">What We Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#our-setup">Our Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static-ip-configuration">Static IP Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#for-driverstations">For Driverstations:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-everything-else-including-roborio">For everything else (including RoboRIO):</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pro-tips">Pro Tips!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-images">Example Images</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Grizzly-Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Robot Networking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/robot-networking.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="robot-networking">
+<h1>Robot Networking<a class="headerlink" href="#robot-networking" title="Permalink to this headline">¶</a></h1>
+<p>FRC Robots can be networked various ways. The most common way is through the usage of what’s called <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol">DHCP (Dynamic Host Configuration Protocol)</a>. In simple terms, DCHP auto assigns IP addresses to devices connected to the DHCP server. Another means of handling networking is via Static IP Addresses.</p>
+<ul class="simple">
+<li><p>Dynamic Host Configuration Protocl (IP Addresses <em>can</em> change)</p></li>
+<li><p>Static IP Configuration (IP Addresses are fixed, conflicts can occur)</p></li>
+</ul>
+<p>A handy picture diagram of DHCP can be found <a class="reference external" href="https://i.imgur.com/AJRAdoP.jpg">here</a>.</p>
+<div class="section" id="what-we-use">
+<h2>What We Use<a class="headerlink" href="#what-we-use" title="Permalink to this headline">¶</a></h2>
+<p>Grizzly Robotics static IPs our robots. We do this for a variety of reasons.</p>
+<ul class="simple">
+<li><p>Static IPed robots don’t need to wait for a DHCP server to assign it an IP, therefore connecting faster.</p></li>
+<li><p>Static IPed robot components can connect to each other faster, as it does not need to resolve <a class="reference external" href="https://www.cloudflare.com/learning/dns/what-is-dns/">domain names</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="our-setup">
+<h2>Our Setup<a class="headerlink" href="#our-setup" title="Permalink to this headline">¶</a></h2>
+<p>The Grizzly Robotics standard setup includes:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi3</a> (for vision and camera streaming)</p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/NETGEAR-Ethernet-Unmanaged-Protection-GS105NA/dp/B0000BVYT3">Ethernet Switch</a> (for more ethernet ports)</p></li>
+<li><p><a class="reference external" href="https://www.andymark.com/products/open-mesh-om5p-ac-dual-band-1-17-gbps-access-point-radio">FRC legal radio</a></p></li>
+<li><p><a class="reference external" href="https://www.andymark.com/products/ni-roborio">FRC RoboRIO</a></p></li>
+<li><p>Driverstation Laptop</p></li>
+</ul>
+<p><img alt="https://i.imgur.com/4hL0m4W.png" src="https://i.imgur.com/4hL0m4W.png" /></p>
+</div>
+<div class="section" id="static-ip-configuration">
+<h2>Static IP Configuration<a class="headerlink" href="#static-ip-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="for-driverstations">
+<h3>For Driverstations:<a class="headerlink" href="#for-driverstations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Static IP of: 10.0.66.5</p></li>
+<li><p>Subnet of: 255.0.0.0</p></li>
+<li><p>Every other field should be blank</p></li>
+</ul>
+</div>
+<div class="section" id="for-everything-else-including-roborio">
+<h3>For everything else (including RoboRIO):<a class="headerlink" href="#for-everything-else-including-roborio" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Static IP of: 10.0.66.X (X being a non-conflicting number between 2 and 20)</p></li>
+<li><p>Subnet of: 255.255.255.0</p></li>
+<li><p>Gateway of (if needed otherwise keep blank): 0.0.0.0</p></li>
+<li><p>DNS Server of (if needed otherwise keep blank): 0.0.0.0</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="pro-tips">
+<h2>Pro Tips!<a class="headerlink" href="#pro-tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To static IP the RoboRIO you must plug in via USB and navigate to 172.22.11.2 in your web browser</p></li>
+</ul>
+</div>
+<div class="section" id="example-images">
+<h2>Example Images<a class="headerlink" href="#example-images" title="Permalink to this headline">¶</a></h2>
+<p><img alt="https://i.imgur.com/vZMF5EM.png" src="https://i.imgur.com/vZMF5EM.png" />
+<img alt="https://i.imgur.com/tAcHjFY.png" src="https://i.imgur.com/tAcHjFY.png" /></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Grizzly-Docs’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Dalton Smith
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
