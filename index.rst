@@ -10,7 +10,7 @@ Welcome to the Grizzly Robotics programming documentation. This website contains
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   
    robot-networking
 
 Getting Starting
