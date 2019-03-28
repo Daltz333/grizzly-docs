@@ -8,14 +8,11 @@ Welcome to Grizzly-Docs's documentation!
 
 Welcome to the Grizzly Robotics programming documentation. This website contains tutorials and resources for our beginner programmers. 
 
+Getting Startings
+==================
+
 .. toctree::
    :maxdepth: 2
    
    robot-networking
 
-Getting Starting
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
